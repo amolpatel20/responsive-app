@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 12%;
+            position: fixed;
+            z-index: 100;
+            background-color: lightgrey
+        }
+
+        .footer {
+            width: 100%;
+            height: 10%;
+            position: fixed;
+            bottom: 0;
+            background-color: #0099cc;
+        }
+
+        .content {
+            width: 100%;
+            height: 78%;
+            position: absolute;
+        }
+
+        .columns-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            width: 100%;
+            float: left;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+            border: 1px solid yellow;
+        }
+
+        .img-container:hover .image {
+            opacity: 0.3;
+        }
+
+        .img-container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            border-color: yellow;
+            color:black;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+
+        @media only screen and (min-width: 600px) {
+
+            /* For tablets: */
+            .col-s-1 {
+                width: 8.33%;
+            }
+
+            .col-s-2 {
+                width: 16.66%;
+            }
+
+            .col-s-3 {
+                width: 25%;
+            }
+
+            .col-s-4 {
+                width: 33.33%;
+            }
+
+            .col-s-5 {
+                width: 41.66%;
+            }
+
+            .col-s-6 {
+                width: 50%;
+            }
+
+            .col-s-7 {
+                width: 58.33%;
+            }
+
+            .col-s-8 {
+                width: 66.66%;
+            }
+
+            .col-s-9 {
+                width: 75%;
+            }
+
+            .col-s-10 {
+                width: 83.33%;
+            }
+
+            .col-s-11 {
+                width: 91.66%;
+            }
+
+            .col-s-12 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            /* For desktop: */
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="col-1 col-s-1" style="text-align: center; margin-top: 25px;">
+                    <a><i class="fas fa-bars" style="font-size: 25px; cursor: pointer;"></i></a>
+                </div>
+                <div class="col-10 col-s-10" style="text-align: center;">
+                    <h1>Header</h1>
+                </div>
+                <div class="col-1 col-s-1" style="text-align: center; margin-top: 25px;">
+                    <a><i class="fa fa-search" style="font-size: 25px; cursor: pointer;"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="img-container" style="text-align: center;">
+                <img src="/img/img_avatar.png" alt="Avatar" class="image" style="width:100; height: 100;">
+                <div class="middle">
+                    <div class="text">John Doe</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="text-align: end;">
+            <p id="cDate"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("cDate").innerHTML = moment().format('D MMM, YYYY');
+    </script>
+
+</body>
+
+</html>
